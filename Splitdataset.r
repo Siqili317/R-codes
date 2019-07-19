@@ -17,9 +17,9 @@ testRMSE ={}
 for (i in 1:100){
   #Split data radomly to train dataset and test dataset
   set.seed(seed = NULL)
-  sample <- sample.int(n = nrow(dt), size = floor(.75*nrow(dt)), replace = F)
-  train <- dt[sample, ]
-  test  <- dt[-sample, ]
+  sample = sample.int(n = nrow(dt), size = floor(.75*nrow(dt)), replace = F)
+  train = dt[sample, ]
+  test  = dt[-sample, ]
   # Build model using train dataset
   sub.model = lm(AGB~Elev_P95+Percentage,data = train)
   modelR[i]=summary(sub.model)$r.squared
